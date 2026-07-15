@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Unlocker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css?v=6">
+</head>
+<body>
+    <div class="card-container">
+        <!-- Abstract Header Background -->
+        <div class="card-header">
+            <div class="header-text">
+                <h2>PDF Unlocker</h2>
+                <p>Secure Tool</p>
+            </div>
+        </div>
+
+        <!-- Papers (Slide up on upload) -->
+        <div class="papers-container">
+            <div class="paper paper-1">
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+            </div>
+            <div class="paper paper-2">
+                <div class="paper-line"></div>
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+            </div>
+            <div class="paper paper-3">
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+            </div>
+        </div>
+
+        <!-- Folder Shape Overlapping -->
+        <div class="folder-body">
+            <div class="folder-content">
+                <form id="unlock-form" enctype="multipart/form-data">
+                    <div class="drop-zone" id="drop-zone">
+                        <input type="file" id="pdf-upload" name="file" accept=".pdf" required hidden>
+                        <p class="drop-text" id="drop-text">Click or drag PDF here</p>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required disabled>
+                    </div>
+
+                    <div id="error-message" class="error-message hidden">
+                        <span id="error-text"></span>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="primary-btn" disabled>
+                        <span class="btn-text">Unlock PDF</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                    
+                    <button type="button" id="download-btn" class="secondary-btn hidden">Download File</button>
+                    <button type="button" id="reset-btn" class="reset-btn hidden">Upload New File</button>
+                </form>
+            </div>
+            
+            <div class="folder-footer">
+                <span class="footer-left" id="footer-filename">00</span>
+                <span class="footer-right" id="footer-filesize">0 Bytes</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js?v=6"></script>
+</body>
+</html>
